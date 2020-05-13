@@ -4,6 +4,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+// Time O(n2) | Space O(1)
 int trappedWater(vector<int> &arr)
 {
     int n = arr.size();

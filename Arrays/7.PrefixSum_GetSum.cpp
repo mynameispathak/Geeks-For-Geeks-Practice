@@ -1,13 +1,6 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-void display(vector<int> arr)
-{
-    for (auto i = arr.begin(); i != arr.end(); i++)
-        cout << *i << " ";
-    cout << endl;
-}
-
 // Time O(n)
 int sum_ab(vector<int> &arr, int x, int y)
 {

@@ -3,7 +3,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-// prefixSum method | Time O(1) if prefixSum array is computed beforehand.
+// Time O(n) | Space O(1) : Most Optimized Solution of Equilibrium Point
 string eqbmPt(vector<int> &arr)
 {
     int sumL = 0, sum = 0, n = arr.size();

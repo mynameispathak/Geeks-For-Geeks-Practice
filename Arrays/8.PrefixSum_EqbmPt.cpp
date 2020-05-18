@@ -1,8 +1,8 @@
-// Equilibrium Point : Sum of Elements before it = Sum of Elements After it
+// Equilibrium Point : Sum of Elements before it = Sum of Elements After it.
 
 #include <bits/stdc++.h>
 using namespace std;
-
+// Time O(n)
 vector<int> prefix_Sum(vector<int> &arr)
 {
     int n = arr.size();
@@ -13,12 +13,12 @@ vector<int> prefix_Sum(vector<int> &arr)
     return prefixSum;
 }
 
-// prefixSum method | Time O(1)
+// prefixSum method | Time O(n) if prefixSum array is computed beforehand.
+//                  | Space O(n) due to extra space for prefixSum array.
 string eqbmPt(vector<int> &arr)
 {
     int sumL, sumR, n = arr.size();
     vector<int> prefixSum = prefix_Sum(arr);
-    string str;
     if (prefixSum[n - 1] - prefixSum[0] == 0 || prefixSum[n - 2] == 0)
         return "Yes";
 
@@ -26,10 +26,8 @@ string eqbmPt(vector<int> &arr)
     {
         if (prefixSum[i - 1] == (prefixSum[n - 1] - prefixSum[i]))
             return "Yes";
-        else
-            str = "No";
     }
-    return str;
+    return "No";
 }
 
 int main()

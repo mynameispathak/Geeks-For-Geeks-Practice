@@ -6,7 +6,7 @@ using namespace std;
 
 bool isPow2(int a)
 {
-    if (!(a & (a - 1)))
+    if (a && !(a & (a - 1)))
         return true;
     else
         return false;

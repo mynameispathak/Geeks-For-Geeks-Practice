@@ -1,12 +1,14 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+// Time O(n) | Space O(1)
 pair<int, int> oddOccurance(int arr[], int N)
 {
     int xor2 = arr[0];
     for (int i = 1; i < N; i++)
-        xor2 = arr[i - 1] ^ arr[i];
-    int setBitNo = xor2 & ~(xor2 - 1);
+        xor2 = xor2 ^ arr[i];
+    int setBitNo;
+    setBitNo = xor2 & ~(xor2 - 1);
     int x = 0, y = 0;
     for (int i = 0; i < N; i++)
     {
@@ -30,9 +32,11 @@ int main()
         int A[N];
         for (int i = 0; i < N; i++)
             cin >> A[i];
-        pair<int, int> p;
-        p = oddOccurance(A, N);
-        cout << p.first << " " << p.second << endl;
+        pair<int, int> p = oddOccurance(A, N);
+        if (p.first > p.second)
+            cout << p.first << " " << p.second << endl;
+        else
+            cout << p.second << " " << p.first << endl;
     }
     return 0;
 }

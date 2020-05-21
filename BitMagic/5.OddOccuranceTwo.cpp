@@ -32,7 +32,7 @@ int main()
             cin >> A[i];
         pair<int, int> p;
         p = oddOccurance(A, N);
-        cout << p.first << " " << p.second;
+        cout << p.first << " " << p.second << endl;
     }
     return 0;
 }

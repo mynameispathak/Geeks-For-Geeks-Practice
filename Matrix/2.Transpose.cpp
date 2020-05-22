@@ -5,14 +5,13 @@
 using namespace std;
 
 //Inplace Transpose of Matrix Time O(n2) | Space O(1)
-vector<vector<int>> transpose(vector<vector<int>> &arr)
+void transpose(vector<vector<int>> &arr)
 {
     for (int i = 0; i < arr.size(); i++)
     {
         for (int j = i + 1; j < arr[i].size(); j++)
             swap(arr[i][j], arr[j][i]);
     }
-    return arr;
 }
 
 int main()

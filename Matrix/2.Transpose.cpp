@@ -4,7 +4,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-//Inplace Transpose of Matrix Time O(n2) | Space O(1)
+//Inplace Transpose of Matrix Time O(R*C) | Space O(1)
 void transpose(vector<vector<int>> &arr)
 {
     for (int i = 0; i < arr.size(); i++)

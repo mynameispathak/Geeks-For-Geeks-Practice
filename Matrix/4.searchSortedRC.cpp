@@ -4,19 +4,19 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-bool searchSortedRC(vector<vector<int>> &arr, int n, int m, int x)
+int searchSortedRC(vector<vector<int>> &arr, int n, int m, int x)
 {
     int startR = 0, startC = m - 1;
-    while (startR <= n - 1 && startC >= 0)
+    while (startR < n && startC >= 0)
     {
         if (arr[startR][startC] == x)
-            return true;
-        else if (arr[startR][startC] < x)
+            return 1;
+        else if (arr[startR][startC] > x)
             startC--;
         else
             startR++;
     }
-    return false;
+    return 0;
 }
 
 int main()
@@ -27,16 +27,17 @@ int main()
     {
         int N, M, X;
         cin >> N >> M;
-        cin >> X;
-        vector<vector<int>> mat(N, vector<int>(M));
+        vector<vector<int>> mat(N);
         for (int i = 0; i < N; i++)
+        {
+            mat[i].resize(M);
             for (int j = 0; j < M; j++)
             {
-                int temp;
-                cin >> temp;
-                mat[i].push_back(temp);
+                cin >> mat[i][j];
             }
-        cout << searchSortedRC(mat, N, M, X) << "\n";
+        }
+        cin >> X;
+        cout << searchSortedRC(mat, N, M, X);
     }
     return 0;
 }

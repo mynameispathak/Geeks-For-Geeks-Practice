@@ -9,9 +9,9 @@ int first(vector<int> &arr, int l, int r, int x)
     if (l > r)
         return -1;
     int mid = (l + r) / 2;
-    if (arr[mid] == x && (arr[0] == x || arr[mid - 1] != x))
+    if (arr[mid] == x && (mid == 0 || arr[mid - 1] != x))
         return mid;
-    else if (x > arr[mid])
+    else if (arr[mid] <= x)
         first(arr, mid + 1, r, x);
     else
         first(arr, l, mid - 1, x);
@@ -22,7 +22,7 @@ int last(vector<int> &arr, int l, int r, int x)
     if (l > r)
         return -1;
     int mid = (l + r) / 2;
-    if (arr[mid] == x && (arr[arr.size() - 1] == x || arr[mid + 1] != x))
+    if (arr[mid] == x && (mid == arr.size() - 1 || arr[mid + 1] != x))
         return mid;
     else if (x >= arr[mid])
         last(arr, mid + 1, r, x);

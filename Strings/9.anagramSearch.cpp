@@ -21,8 +21,8 @@ int anagramSearch(string &s, string &p)
     char countP[MAX] = {0}, countTW[MAX] = {0};
     for (int i = 0; i < M; i++)
     {
-        (countP[p[i]])++;
-        (countTW[s[i]])++;
+        countP[p[i]]++;
+        countTW[s[i]]++;
     }
 
     int anagCount = 0;
@@ -31,8 +31,7 @@ int anagramSearch(string &s, string &p)
         if (compare(countP, countTW))
             anagCount++;
 
-        (countTW[s[i]])++;
-
+        countTW[s[i]]++;
         countTW[s[i - M]]--;
     }
 
